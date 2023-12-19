@@ -13,8 +13,6 @@ fours = gList.count(4)
 total = 0
 
 
-
-
 total += fours
 
 if (ones-threes) <= 0:
@@ -23,15 +21,15 @@ else:
     ones -= threes
 total += threes
 
-
-total +=   math.ceil(twos / 2)
-
-
+total +=   twos // 2
+twos = twos%2
 
 total += (ones//4)
 ones = ones%4
-if(ones>0):
-    total += ones
+if ones>2 and twos>0:
+    total += 2
+elif twos>0 or ones>0:
+    total+=1
 
 print(total)
 
